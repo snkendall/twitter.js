@@ -2,9 +2,13 @@ const express = require('express');
 const app = express();
 const nunjucks = require('nunjucks');
 const routes = require('./routes');
+const bodyParser = require('body-parser');
 //const path = require('path');
 
 app.use(express.static('public'));
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 app.use(function (req, res, next) {
   console.log(req.method);

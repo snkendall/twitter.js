@@ -1,10 +1,10 @@
 const _ = require('lodash');
-const data = [{name: 'Shannon', content: "this is shannon's content"}, {name: 'Blanca', content: "this is Blanca's content"}];
+const data = [{name: 'Shannon', content: "this is shannon's content", id: 1}, {name: 'Blanca', content: "this is Blanca's content", id: 2}];
 
 module.exports = { add: add, list: list, find: find };
 
 function add (name, content) {
-    data.push({ name: name, content: content });
+    data.push({ name: name, content: content, id: data.length + 1 + ''});
   }
 
   function list () {
@@ -36,7 +36,7 @@ function add (name, content) {
     module.exports.add( getFakeName(), getFakeTweet() );
   }
 
-  //console.log(module.exports.find('Blanca'));
+ // console.log(module.exports.find({name: 'Shannon'}));
 
   //console.log(module.exports.list());
 
