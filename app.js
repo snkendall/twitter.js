@@ -16,10 +16,10 @@ app.use(function (req, res, next) {
 app.use('/', routes);
 
 
-app.get('/', function (req, res) {
-  //res.send('Hello there');
-  res.render('index', { title: 'Hall of Fame', people: people });
-})
+// app.get('/', function (req, res) {
+//   //res.send('Hello there');
+//   res.render('index', { title: 'Hall of Fame', people: people });
+// })
 
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
